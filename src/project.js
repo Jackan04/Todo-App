@@ -1,5 +1,3 @@
-import {Task} from "./task.js";
-
 class Project{
     constructor(title, projectID){
         // this.projectID = crypto.randomUUID();
@@ -9,7 +7,7 @@ class Project{
     }
 
     logTasks(tasks){
-        return tasks.filter(task => task.projectID === project.projectID);
+        return tasks.filter(task => task.projectID === this.projectID);
     }
 
 

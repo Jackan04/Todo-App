@@ -13,14 +13,23 @@ class Task{
         
     }
 
-    get getTitle(){
-        return this.title;
+    get title(){
+        return this._title;
     }
 
-    set setTitle(title){
-        this.title = title;
+    set title(title){
+        this._title = title;
     }
 
+    markCompleted(){
+        if(!this.isCompleted){
+            return this.isCompleted = true;
+        }else{
+            return this.isCompleted = false;
+        }
+    }
+
+    // Date handling
     isDueToday(){
         if(this.date){
             return isToday(this.date)
@@ -38,7 +47,24 @@ class Task{
         }
     }
 
-    get getFormattedDate(){
+    set date(date) {
+
+        if(typeof date === "string"){
+            this._date = parseISO(date);
+        }
+        else if(date instanceof Date){
+            this._date = date;
+        }
+        else{
+            this._date = null;
+        }
+    }
+
+    get date(){
+        return this.date;
+    }
+
+    get formattedDate(){
 
         if(this.date){
             this.format(this.date, 'yyyy-MM-dd')
@@ -46,10 +72,6 @@ class Task{
             return '';
         }
         
-    }
-
-    set setDate(date) {
-        this.date = parseISO(date);
     }
 
 }

@@ -6,7 +6,7 @@ class Project{
         
     }
 
-    logTasks(tasks){
+    getProjectTasks(tasks){
         return tasks.filter(task => task.projectID === this.projectID);
     }
 

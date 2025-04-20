@@ -2,31 +2,32 @@ import "./styles.css";
 import {Task} from "./task.js";
 import {taskStorage, projectStorage} from "./storage.js";
 import {Project} from "./project.js";
+import { deleteTask } from "./helpers.js";
 
 let tasks = taskStorage.load();
+let projects = projectStorage.load();
+const project1 = new Project("Project 1", "123");
+projects.push(project1);
+projectStorage.save(projects)
 
-const title = prompt("Ange titel")
-const projectID = prompt("Ange projektID");
-const newTask = new Task(title, null, projectID);
-tasks.push(newTask)
+const task1 = new Task("Fix car", null, "123");
+tasks.push(task1);
+const task2 = new Task("Get helmet", null, "1235");
+tasks.push(task2);
+taskStorage.save(tasks);
+
+tasks = deleteTask(tasks, task2.id);
 taskStorage.save(tasks);
 
 
-// const project1 = new Project("Project1", "1234");
-// projects.push(project1);
 
-// const task1 = new Task("Try this", null, "1234");
-// const task2 = new Task("This is a test and should not be in a project", null, "123456");
-// tasks.push(task1);
-// tasks.push(task2);
-// projectStorage.save(projects);
-// taskStorage.save(tasks);
+const projectTasks = project1.getProjectTasks(tasks);
 
-// console.log("These tasks are in project 1\n"+ project1.logTasks(tasks))
+projectTasks.forEach(task => {
+    console.log(task.title);
+});
 
-// projects.forEach(project => {
-//     console.log(project);
-// });
+
 
 
 

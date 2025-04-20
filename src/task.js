@@ -20,32 +20,6 @@ class Task{
         this._title = title;
     }
 
-    markCompleted(){
-        if(!this.isCompleted){
-            return this.isCompleted = true;
-        }else{
-            return this.isCompleted = false;
-        }
-    }
-
-    // Date handling
-    isDueToday(){
-        if(this.date){
-            return isToday(this.date)
-        }else{
-            return false;
-        }
-        
-    }
-
-    isOverDue(){
-        if(this.date){
-            return isPast(this.date) && !this.isDueToday() && !this.isCompleted 
-        }else{
-            return false;
-        }
-    }
-
     set date(date) {
 
         if(typeof date === "string"){
@@ -61,6 +35,32 @@ class Task{
 
     get date(){
         return this.date;
+    }
+
+    markCompleted(){
+        if(!this.isCompleted){
+            return this.isCompleted = true;
+        }else{
+            return this.isCompleted = false;
+        }
+    }
+
+    // Date handling with date-fns
+    isDueToday(){
+        if(this.date){
+            return isToday(this.date)
+        }else{
+            return false;
+        }
+        
+    }
+
+    isOverDue(){
+        if(this.date){
+            return isPast(this.date) && !this.isDueToday() && !this.isCompleted 
+        }else{
+            return false;
+        }
     }
 
     get formattedDate(){

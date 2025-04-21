@@ -4,6 +4,7 @@ import {Task} from "./task.js";
 import {taskStorage, projectStorage} from "./storage.js";
 import {Project} from "./project.js";
 import { deleteTask } from "./helpers.js";
+import {}
 
 let tasks = taskStorage.load();
 let projects = projectStorage.load();

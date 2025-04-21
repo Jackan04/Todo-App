@@ -1,4 +1,5 @@
 import "./styles.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import {Task} from "./task.js";
 import {taskStorage, projectStorage} from "./storage.js";
 import {Project} from "./project.js";

@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Font awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-yU7uD3uXcG5Y+PuhqU2mCKkxAFu6ZJym2qH6cghDUQZniRZyFIFsZ3WJ/La6HaA+llqRRVpr3JtMJv6y0a+nNw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
 <script defer src="main.js"></script></head>
 <body>
+    <div id="sidebar">
+        <div id="sidebar-items">
+            <ul id="views-container">
+                <!-- <button class="button-view">All Tasks</button>
+                <button class="button-view">Today</button>
+                <button class="button-view">This Week</button>
+                <button class="button-view">Completed</button> -->
+                <li class="button-view"> All Tasks</li>
+                <li class="button-view">Today</li>
+                <li class="button-view">This week</li>
+                <li class="button-view">Completed</li>
+            </ul>
+            <br>
+            <ul id="projects-container">
+                <li class="item-project">Project 1</li>
+                <li class="item-project">Project 2</li>
+                <li class="item-project">Project 3</li>
+            </ul>
+        </div>
+        
+        <div><button id="btn-new-project">New Project</button></div>
+    </div>
+    <div id="main-conent"></div>
     
 </body>
 </html>

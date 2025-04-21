@@ -26,6 +26,11 @@ body {
     background-color: var(--sidebar-color);
 }
 
+#views-container{
+    display: flex;
+    flex-direction: column;
+}
+
 #main-conent{
     grid-area: main;
 }
